@@ -13,9 +13,7 @@ public class BbsApplication {
 		SpringApplication.run(BbsApplication.class, args);
 
 		BBSAlgorithm bbsAlgorithm = new BBSAlgorithm();
-		bbsAlgorithm.calculate();
-		File f = new File("a.txt");
-
+		//bbsAlgorithm.calculate(0);
 	}
 
 

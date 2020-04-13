@@ -1,10 +1,13 @@
 package csprng.bbs.services;
 
+import org.springframework.stereotype.Service;
+
+import java.io.*;
 import java.math.BigInteger;
 import java.util.ArrayList;
 import java.util.Random;
 
-
+@Service
 public class BBSAlgorithm {
 
     private static final BigInteger one = BigInteger.valueOf(1L);
@@ -59,24 +62,34 @@ public class BBSAlgorithm {
 
     }
 
-    public void calculate(){
-         ArrayList<Byte> bits = new ArrayList<>();
-         StringBuilder bitOutput = new StringBuilder();
+    public File calculate(double fileSize){
+
+        //ArrayList<Byte> bits = new ArrayList<>();
+        StringBuilder bitOutput = new StringBuilder();
         Random rand = new Random();
 
-        generateM(100, rand);
-        generateX0(50, rand);
+        File file = new File("output.bin");
+        try {
+            FileOutputStream fos = new FileOutputStream(file);
 
-        BigInteger x = x0;
-        System.out.println("Initial x is " + x);
-        for(int i = 0; i < 10; i++){
-            x = x.multiply(x).remainder(m);
-            BigInteger b = x.remainder(two);
-            bitOutput.append(b);
-            bits.add(b.byteValue());
+            generateM(100, rand);
+            generateX0(50, rand);
+
+            BigInteger x = x0;
+            System.out.println("Initial x is " + x);
+            while(file.length() < fileSize * 1024 * 1024){
+                x = x.multiply(x).remainder(m);
+                BigInteger b = x.remainder(two);
+                bitOutput.append(b);
+                //bits.add(b.byteValue());
+                fos.write(b.byteValue());
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
         }
-        System.out.println(bitOutput);
-        System.out.println(bits);
+        System.out.println(bitOutput.toString());
+        System.out.println("Scriere terminata");
+        return file;
     }
 
 

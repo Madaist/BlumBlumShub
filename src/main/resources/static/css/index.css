@@ -1,0 +1,64 @@
+html {
+	font-size: calc(1em + 1vw)
+	}
+
+body{
+	margin: 0;
+	height: 100%;
+	width: 100%;
+	overflow: hidden;
+	background-color: #e6ffff !important;
+}
+
+.swal2-popup {
+	font-size: 0.5rem !important;
+	width:15em !important;
+}
+
+#banner-img{
+	width: 100vw;
+	height: 46vh;
+}
+
+.banner{
+	height:50%;
+	background-position:center;
+	background-repeat: no-repeat;
+	position: absolute;
+	z-index: -1;
+}
+
+.title-text{
+	text-align: center;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	color: #DCD0C0;
+	font-family: "Times New Roman";
+
+	text-shadow:
+		3px 3px 0 #000,
+		-1px -1px 0 #000,
+		1px -1px 0 #000,
+		-1px 1px 0 #000,
+		1px 1px 0 #000;
+}
+
+.form-group{
+    position: fixed;
+    top: 60vh;
+    left: 30vw;
+    width: 50vw;
+    height: 5vh;
+}
+
+#example-number-input{
+    width: 20vw;
+    height: 10vh;
+}
+
+#label{
+    font-size:80%;
+    display: inline;
+}

@@ -1,10 +1,45 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <title>Blum Blum Shub CSPRNG</title>
+    <link type="text/css" rel="stylesheet" href = "../css/index.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta charset="UTF-8">
-    <title>Blum Blum Shub</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
 </head>
+
 <body>
+
+<div class="banner">
+    <img id="banner-img" alt="Banner image" src = "../images/banner2.jpg">
+    <div class="title-text">
+        <h1 id="ttext">Blum Blum Shub</h1>
+        <h4>Pseudorandom number generator</h4>
+    </div>
+</div>
+
+
+<div id="bbs-div">
+    <div class="form-group row">
+        <form id="submit-form" method="POST" action="/">
+            <label for="example-number-input" class="col-2 col-form-label" id="label">File size:</label>
+            <div class="col-10">
+                <input class="form-control" name="fileSize" type="number" value="0.1" id="example-number-input" step="0.01">
+            </div>
+            <button type="submit" class="btn btn-secondary" id="submit-btn">Submit</button>
+        </form>
+    </div>
+</div>
+
+
+<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+
+<link rel='stylesheet' href='https://cdn.jsdelivr.net/npm/sweetalert2@7.12.15/dist/sweetalert2.min.css'>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
+<script src = "../js/index.js" type="text/javascript"></script>
 
 </body>
 </html>
