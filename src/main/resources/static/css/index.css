@@ -47,18 +47,30 @@ body{
 
 .form-group{
     position: fixed;
-    top: 60vh;
-    left: 30vw;
-    width: 50vw;
-    height: 5vh;
+    top: 55vh;
+    left: 38vw;
 }
 
 #example-number-input{
     width: 20vw;
     height: 10vh;
+    display: block;
+    position: fixed;
+    top: 65vh;
 }
 
 #label{
     font-size:80%;
-    display: inline;
+    display: block;
+    position: fixed;
+    width: 50vw;
+}
+
+#submit-btn{
+    position: fixed;
+    font-size: smaller;
+    left: 43vw;
+    width: 10vw;
+    height: 8vh;
+    top: 85vh;
 }
