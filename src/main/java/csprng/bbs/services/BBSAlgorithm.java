@@ -4,7 +4,6 @@ import org.springframework.stereotype.Service;
 
 import java.io.*;
 import java.math.BigInteger;
-import java.util.ArrayList;
 import java.util.Random;
 
 @Service
@@ -37,11 +36,7 @@ public class BBSAlgorithm {
             q = getPrime(bits, rand);
         }
         m = p.multiply(q);
-
-        System.out.println("p = " + p);
-        System.out.println("q = " + q);
-        System.out.println("m = " + m);
-    }
+}
 
     private BigInteger getSeed(int bits, Random rand) {
         BigInteger s = getPrime(bits, rand);
@@ -58,14 +53,9 @@ public class BBSAlgorithm {
         while(s.equals(p) || s.equals(q) || s.compareTo(one) <= 0) // x0 trebuie sa fie diferit de p si q si trebuie sa fie mai mare decat 1
             s = getSeed(bits, rand);
         x0 = s; // cand indeplineste conditiile, asignam valoarea lui x0
-        System.out.println("seed = " + x0);
-
     }
 
     public File calculate(double fileSize){
-
-        //ArrayList<Byte> bits = new ArrayList<>();
-        StringBuilder bitOutput = new StringBuilder();
         Random rand = new Random();
 
         File file = new File("output.bin");
@@ -76,25 +66,14 @@ public class BBSAlgorithm {
             generateX0(50, rand);
 
             BigInteger x = x0;
-            System.out.println("Initial x is " + x);
             while(file.length() < fileSize * 1024 * 1024){
                 x = x.multiply(x).remainder(m);
                 BigInteger b = x.remainder(two);
-                bitOutput.append(b);
-                //bits.add(b.byteValue());
                 fos.write(b.byteValue());
             }
         } catch (IOException e) {
             e.printStackTrace();
         }
-        System.out.println(bitOutput.toString());
-        System.out.println("Scriere terminata");
         return file;
     }
-
-
-
-
-
-
 }
