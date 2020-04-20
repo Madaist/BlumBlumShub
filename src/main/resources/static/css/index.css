@@ -74,3 +74,14 @@ body{
     height: 8vh;
     top: 85vh;
 }
+
+.hidden{
+    display: none;
+}
+
+#note{
+    font-size: 20px;
+    position: fixed;
+    top: 85vh;
+    left: 55vw;
+}

@@ -3,4 +3,7 @@ document.getElementById("submit-btn").addEventListener("click", function(e){
         Swal.fire("Oops..", "Please insert a number", "error");
         e.preventDefault();
     }
+    else{
+        document.getElementById("note").classList.remove("hidden");
+    }
 });
