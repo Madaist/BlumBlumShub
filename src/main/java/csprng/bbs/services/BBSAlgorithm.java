@@ -23,7 +23,7 @@ public class BBSAlgorithm {
     private static BigInteger getPrime(int bits, Random rand) { //functie folosita pentru generarea lui p si q
         BigInteger p;
         do {
-            p = new BigInteger(bits, 100, rand);
+            p = BigInteger.probablePrime(bits, rand);
         } while (!p.mod(four).equals(three)); // numarul generat trebuie sa aiba proprietatea ca restul impartirii la 4 este 3
         return p;
     }
@@ -66,7 +66,7 @@ public class BBSAlgorithm {
             generateX0(50, rand);
 
             BigInteger x = x0;
-            double wantedSize = fileSize * 1024 * 1024;
+            double wantedSize = fileSize * 1024 * 1024; //transform din MB in bytes
             while(file.length() < wantedSize){
                 x = x.multiply(x).remainder(n); // x(i+1) = xi ^ 2 mod n
                 BigInteger b = x.remainder(two); // luam bitul de paritate 

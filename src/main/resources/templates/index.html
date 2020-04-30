@@ -25,7 +25,7 @@
         <form id="submit-form" method="POST" action="/">
             <label for="example-number-input" id="label">Choose the size of the file (MB):</label>
             <div class="col-10">
-                <input class="form-control" name="fileSize" type="number" value="0.1" id="example-number-input" step="0.01">
+                <input class="form-control" name="fileSize" type="number" value="0.1" min="0" id="example-number-input" step="0.01">
             </div>
             <button type="submit" class="btn btn-secondary" id="submit-btn">Submit</button>
             <p id="note" class="hidden"> Be patient. It might take a while.</p>
